@@ -277,6 +277,13 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
+# Add a spacer to the left side of the Dock (where the applications are)
+defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+
+# Add a 'Recents' tile to the Dock
+# (goes on the right side, defaults to recent Applications)
+defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'
+
 ###############################################################################
 # Safari & WebKit                                                             #
 ###############################################################################
