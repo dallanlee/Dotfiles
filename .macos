@@ -68,6 +68,11 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 # Restart automatically if the computer freezes
 sudo systemsetup -setrestartfreeze on
 
+# Enable Dark Mode
+sudo defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
+# Enable Keyboard Shortcut [cmd]+[alt]+[ctrl]+[t] to toggle Dark Mode
+sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
+
 ###############################################################################
 # SSD-specific tweaks                                                         #
 ###############################################################################
