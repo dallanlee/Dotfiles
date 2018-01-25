@@ -1,0 +1,395 @@
+options:
+  formatter: stylish
+files:
+  include: '**/*.s+(a|c)ss'
+  merge-default-rules: false
+rules:
+  # Extends
+  extends-before-mixins: 1
+  extends-before-declarations: 1
+  placeholder-in-extend: 0
+
+  # Mixins
+  mixins-before-declarations: 1
+
+  # Line Spacing
+  one-declaration-per-line: 1
+  empty-line-between-blocks: 1
+  single-line-per-selector: 1
+
+  # Disallows
+  no-color-keywords: 0
+  no-color-literals: 0
+  no-css-comments: 0
+  no-debug: 1
+  no-duplicate-properties: 1
+  no-empty-rulesets: 1
+  no-extends: 0
+  no-ids: 0
+  no-important: 0
+  no-invalid-hex: 1
+  no-mergeable-selectors: 1
+  no-misspelled-properties: 1
+  no-qualifying-elements: 0
+  no-trailing-whitespace: 0
+  no-trailing-zero: 1
+  no-transition-all: 1
+  no-url-protocols: 1
+  no-vendor-prefixes: 0
+  no-warn: 0
+  property-units: 0
+
+  # Nesting
+  force-attribute-nesting: 0
+  force-element-nesting: 0
+  force-pseudo-nesting: 1
+
+  # Name Formats
+  class-name-format: 0
+  function-name-format: 1
+  id-name-format: 0
+  mixin-name-format: 1
+  placeholder-name-format: 1
+  variable-name-format: 1
+
+  # Style Guide
+  bem-depth:
+    - 0
+    - max-depth: 1
+  border-zero: 1
+  brace-style:
+    - 1
+    -
+      style: 'stroustrup'
+  clean-import-paths: 0
+  empty-args: 1
+  hex-length:
+    - 1
+    -
+      style: long
+  hex-notation:
+    - 1
+    -
+      style: uppercase
+  indentation: 1
+  leading-zero: 0
+  nesting-depth:
+    - 1
+    -
+      max-depth: 4
+  property-sort-order:
+    - 1
+    -
+      order:
+        # VISIBILITY
+        - content
+        - visibility
+        - display
+        - position
+        - z-index
+        - opacity
+        - pointer-events
+        - top
+        - bottom
+        - left
+        - right
+        - float
+        - clear
+        - overflow
+        - overflow-clip-box
+        - overflow-x
+        - overflow-y
+
+        # BOX 1
+        - display
+        - width
+        - min-width
+        - max-width
+        - height
+        - min-height
+        - max-height
+        - box-sizing
+        - grid
+        - grid-area
+        - grid-auto-columns
+        - grid-auto-flow
+        - grid-auto-rows
+        - grid-column
+        - grid-column-end
+        - grid-column-gap
+        - grid-column-start
+        - grid-gap
+        - grid-row
+        - grid-row-end
+        - grid-row-gap
+        - grid-row-start
+        - grid-template
+        - grid-template-areas
+        - grid-template-columns
+        - grid-template-rows
+        - flex
+        - flex-basis
+        - flex-direction
+        - flex-flow
+        - flex-grow
+        - flex-shrink
+        - flex-wrap
+        - box-decoration-break
+        - justify-content
+        - align-items
+        - align-self
+        - align-content
+        - order
+
+        # BOX 2
+        - transform
+        - transform-box
+        - transform-origin
+        - transform-style
+        - display-outside
+        - box-suppress
+        - display-inside
+        - offset-inline-start
+        - offset-inline-end
+        - offset-block-start
+        - offset-block-end
+        - inline-size
+        - min-inline-size
+        - max-inline-size
+        - block-size
+        - min-block-size
+        - max-block-size
+        - margin
+        - margin-top
+        - margin-bottom
+        - margin-left
+        - margin-right
+        - margin-inline-start
+        - margin-inline-end
+        - margin-block-start
+        - margin-block-end
+        - padding
+        - padding-top
+        - padding-bottom
+        - padding-left
+        - padding-right
+        - padding-inline-start
+        - padding-inline-end
+        - padding-block-start
+        - padding-block-end
+        - orphans
+        - columns
+        - column-gap
+        - column-fill
+        - column-rule
+        - column-rule-color
+        - column-rule-style
+        - column-rule-width
+        - column-span
+        - column-count
+        - column-width
+        - object-fit
+        - object-position
+
+        # BOACKGROUND
+        - backdrop-filter
+        - backface-visibility
+        - background
+        - background-attachment
+        - background-blend-mode
+        - background-clip
+        - background-color
+        - background-image
+        - background-origin
+        - background-position
+        - background-repeat
+        - background-size
+        - isolation
+
+        # BORDER
+        - border
+        - border-top
+        - border-bottom
+        - border-left
+        - border-right
+        - border-width
+        - border-top-width
+        - border-bottom-width
+        - border-left-width
+        - border-right-width
+        - border-style
+        - border-top-style
+        - border-bottom-style
+        - border-left-style
+        - border-right-style
+        - border-radius
+        - border-top-left-radius
+        - border-top-right-radius
+        - border-bottom-left-radius
+        - border-bottom-right-radius
+        - border-inline-start
+        - border-inline-start-color
+        - border-inline-start-style
+        - border-inline-start-width
+        - border-inline-end
+        - border-inline-end-color
+        - border-inline-end-style
+        - border-inline-end-width
+        - border-block-start
+        - border-block-start-color
+        - border-block-start-style
+        - border-block-start-width
+        - border-block-end
+        - border-block-end-color
+        - border-block-end-style
+        - border-block-end-width
+        - border-color
+        - border-image
+        - border-image-outset
+        - border-image-repeat
+        - border-image-slice
+        - border-image-source
+        - border-image-width
+        - border-top-color
+        - border-right-color
+        - border-bottom-color
+        - border-left-color
+        - border-collapse
+        - border-spacing
+        - outline
+        - outline-color
+        - outline-offset
+        - outline-style
+        - outline-width
+        - box-shadow
+
+        # TEXT
+        - color
+        - font
+        - font-family
+        - font-feature-settings
+        - font-kerning
+        - font-language-override
+        - font-size
+        - font-size-adjust
+        - font-stretch
+        - font-style
+        - font-synthesis
+        - font-variant
+        - font-variant-alternates
+        - font-variant-caps
+        - font-variant-east-asian
+        - font-variant-ligatures
+        - font-variant-numeric
+        - font-variant-position
+        - font-weight
+        - hyphens
+        - initial-letter
+        - initial-letter-align
+        - letter-spacing
+        - line-break
+        - line-height
+        - display-list
+        - list-style
+        - list-style-image
+        - list-style-position
+        - list-style-type
+        - direction
+        - text-align
+        - text-align-last
+        - text-decoration
+        - text-decoration-color
+        - text-decoration-line
+        - text-decoration-style
+        - text-underline-position
+        - text-indent
+        - text-orientation
+        - text-overflow
+        - text-rendering
+        - text-shadow
+        - text-size-adjust
+        - text-transform
+        - white-space
+        - word-break
+        - word-spacing
+        - word-wrap
+
+        # OTHER
+        - all
+        - mix-blend-mode
+        - break-before
+        - break-after
+        - break-inside
+        - page-break-before
+        - page-break-after
+        - page-break-inside
+        - caption-side
+        - clip
+        - clip-path
+        - counter-increment
+        - counter-reset
+        - cursor
+        - empty-cells
+        - filter
+        - image-orientation
+        - image-rendering
+        - ime-mode
+        - mask
+        - mask-type
+        - quotes
+        - resize
+        - scroll-behavior
+        - scroll-snap-coordinate
+        - scroll-snap-destination
+        - scroll-snap-points-x
+        - scroll-snap-points-y
+        - scroll-snap-type
+        - shape-image-threshold
+        - shape-margin
+        - shape-outside
+        - tab-size
+        - table-layout
+        - text-combine-upright
+        - touch-action
+        - will-change
+        - unicode-bidi
+        - vertical-align
+        - widows
+        - writing-mode
+
+        # ANIMATION/TRANSITION
+        - perspective
+        - perspective-origin
+        - animation
+        - animation-name
+        - animation-duration
+        - animation-fill-mode
+        - animation-play-state
+        - animation-timing-function
+        - animation-delay
+        - animation-iteration-count
+        - animation-direction
+        - transition
+        - transition-delay
+        - transition-duration
+        - transition-property
+        - transition-timing-function
+  quotes: 1
+  shorthand-values: 1
+  url-quotes: 1
+  variable-for-property: 1
+  zero-unit: 1
+
+  # Inner Spacing
+  space-after-comma: 1
+  space-before-colon: 1
+  space-after-colon: 1
+  space-before-brace: 1
+  space-before-bang: 1
+  space-after-bang: 1
+  space-between-parens: 0
+  space-around-operator: 1
+
+  # Final Items
+  trailing-semicolon: 1
+  final-newline: 1
