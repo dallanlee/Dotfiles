@@ -39,9 +39,9 @@
       "opacity",
       "pointer-events",
       "top",
-      "right",
       "bottom",
       "left",
+      "right",
       "float",
       "clear",
       "overflow",
@@ -84,10 +84,10 @@
       "flex-shrink",
       "flex-wrap",
       "box-decoration-break",
-      "align-content",
+      "justify-content",
       "align-items",
       "align-self",
-      "justify-content",
+      "align-content",
       "order"
     ],
     [
