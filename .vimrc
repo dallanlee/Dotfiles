@@ -18,9 +18,13 @@ set laststatus=2
 set incsearch
 
 " LINES
-set number
-set cursorline
+set number                    " visible line numbering
+set cursorline                " highlihgt current line
 set scrolloff=5
+set lazyredraw                " redraw only when we need to.
+set showmatch                 " when on a [{(, highlight the matching )}]
+set hlsearch                  " highlight search matches
+set listchars=tab:▷⋅,trail:⋅,nbsp:⋅  "display tabs and trailing spaces
 
 " TABS
 set backspace=indent,eol,start
@@ -32,6 +36,7 @@ set shiftwidth=2
 set autoindent
 set smartindent
 set indentkeys+=O,o
+set expandtab                   " Convert all TAB characters in the file to spaces
 
 " DIRECTORY EXPLORER
 let g:netrw_banner = 0
@@ -43,6 +48,18 @@ let g:netrw_sort_direction = 'normal'
 
 " COMMAND-LINE COMPLETION
 set wildmenu
+augroup configgroup             " an augroup ensures the autocmd's are only applied once
+  autocmd FileType python setlocal shiftwidth=4 tabstop=4 textwidth=79
+  autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
+augroup END
+
+"Remap jk/kj to escape while in insert mode:
+inoremap jk <esc>
+inoremap kj <esc>
+
+
+"Enable mouse highlighting
+if has('mouse') | set mouse=a | endif
 
 " PATTERN IGNORING
 set wildignore+=*/.git/*,*/node_modules/*,*/build/*,*/.next/*,*/__snapshots__/*,*/flow-typed/*,*/priv/*,*/deps/*,package-lock.json,*.zip,*.png,*.jpg,*.gif,*.pdf,*DS_Store*
@@ -60,10 +77,16 @@ autocmd FileType gitcommit setlocal spell
 set clipboard=unnamed
 
 " HISTORY
+set history=1000                " store lots of :cmdline history
+set incsearch                   " search as characters are entered
+set backspace=indent,eol,start  " Make backspace behave in a sane manner.
 set undofile
 set undodir=~/.vim/undo_files//
 set directory=~/.vim/swap_files//
 set backupdir=~/.vim/backup_files//
+
+filetype on                     " Try to detect filetypes
+filetype plugin indent on       " Enable file type detection and do language-dependent indenting.
 
 " PERFORMANCE
 set synmaxcol=200
