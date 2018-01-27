@@ -254,6 +254,8 @@
 	# Speed up commands involving untracked files such as `git status`.
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
+  
+  editor = code --wait --new-window
 
 [commit]
 	# https://help.github.com/articles/signing-commits-using-gpg/
@@ -264,6 +266,10 @@
 [diff]
 	# Detect copies as well as renames
 	renames = copies
+  tool = default-difftool
+
+[difftool "default-difftool"]
+    cmd = code --wait --new-window --diff $LOCAL $REMOTE
 
 [diff "bin"]
 	# Use `hexdump` to diff binary files
