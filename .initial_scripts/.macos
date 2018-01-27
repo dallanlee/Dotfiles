@@ -23,7 +23,7 @@ sudo scutil --set LocalHostName "dallan"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "dallan"
 
 # Set standby delay (default is 1 hour)
-su#do pmset -a standbydelay 3600
+# sudo pmset -a standbydelay 3600
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
