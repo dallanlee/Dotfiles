@@ -6,6 +6,9 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+# AFK - Put computer to sleep
+alias afk="mac sleep"
+
 # Shortcuts
 alias dbdir="cd ~/Dropbox"
 alias dldir="cd ~/Downloads"
