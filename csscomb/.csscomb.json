@@ -1,9 +1,12 @@
 {
+  "vendor-prefix-align": true,
+  "remove-empty-rulesets": true,
   "always-semicolon": true,
   "color-case": "upper",
   "block-indent": "  ",
   "color-shorthand": false,
   "element-case": "lower",
+  "eof-newline": true,
   "leading-zero": true,
   "quotes": "single",
   "sort-order-fallback": "abc",
@@ -13,17 +16,15 @@
   "space-after-combinator": " ",
   "space-between-declarations": "\n",
   "space-before-opening-brace": " ",
-  "space-after-opening-brace": "\n",
   "space-after-selector-delimiter": "\n",
   "space-before-selector-delimiter": "",
   "space-before-closing-brace": "\n",
   "strip-spaces": true,
   "tab-size": true,
-  "vendor-prefix-align": true,
+  "unitless-zero": true,
   "sort-order": [
     [
       "__SCSS__",
-
       "$import",
       "$variable",
       "$extend",

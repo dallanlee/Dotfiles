@@ -6,6 +6,9 @@
 [github]
   user = dallanlee
 
+[credential]
+  helper = osxkeychain
+
 [log]
   date = relative
 
@@ -20,7 +23,7 @@
 
 [color]
   pager = true
-  ui = auto
+  ui = true
   status = auto
   diff = auto
   branch = auto
@@ -185,7 +188,7 @@
 	# Amend the currently staged files to the latest commit
 	amend = commit --amend --reuse-message=HEAD
 
-	# Credit an author on the latest commit
+	# it an author on the latest commit
 	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
 
 	# Interactive rebase with the given number of latest commits
@@ -235,7 +238,7 @@
 
 [core]
 	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
@@ -254,7 +257,7 @@
 	# Speed up commands involving untracked files such as `git status`.
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
-  
+
   editor = code --wait --new-window
 
 [commit]
@@ -277,7 +280,7 @@
 	log = true
 
 [push]
-	# https://git-scm.com/docs/git-config#git-config-pushdefault 
+	# https://git-scm.com/docs/git-config#git-config-pushdefault
 	default = simple
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
@@ -299,3 +302,6 @@
 
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
+
+[url "https://github.com"]
+    insteadOf = "git://github.com"
