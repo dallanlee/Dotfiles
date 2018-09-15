@@ -105,7 +105,6 @@ alias -- -="cd -"
 alias dbdir="cd ~/Dropbox"
 alias dldir="cd ~/Downloads"
 alias dtdir="cd ~/Desktop"
-alias pldir="cd ~/Dropbox/Work/printerlogic"
 alias g="git"
 
 # Detect which `ls` flavor is in use
@@ -247,8 +246,6 @@ alias path='echo -e ${PATH//:/\\n}'
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-# Add Postgres.app pg_config
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin
-
-# VirtualenvWrapper
-source /usr/local/bin/virtualenvwrapper.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
