@@ -37,3 +37,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Dev Stuff
+.sass-cache
+.sass-cache/*
