@@ -106,6 +106,16 @@ alias dbdir="cd ~/Dropbox"
 alias dldir="cd ~/Downloads"
 alias dtdir="cd ~/Desktop"
 alias g="git"
+# PrinterLogic Shortcuts
+alias plcomdir="cd ~/pl/printerlogic-com"
+alias plhdir="cd ~/pl/hermes"
+alias pladir="cd ~/pl/pl-auth"
+alias plbdir="cd ~/pl/pl-billing"
+alias pledir="cd ~/pl/pl-email"
+alias plpdir="cd ~/pl/pl-product"
+alias plrsdir="cd ~/pl/pl-roi-server"
+alias plsdir="cd ~/pl/pl-salesforce"
+alias plrdir="cd ~/pl/roi"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -249,3 +259,10 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/dallan.clawson/PrinterLogic/pl-email/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/dallan.clawson/PrinterLogic/pl-email/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/dallan.clawson/PrinterLogic/pl-email/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/dallan.clawson/PrinterLogic/pl-email/node_modules/tabtab/.completions/sls.zsh
