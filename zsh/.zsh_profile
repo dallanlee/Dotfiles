@@ -1,6 +1,9 @@
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
+# Composer Valet PATH
+export PATH="~/.composer/vendor/bin:$PATH"
+
 # Add ASP.NET Core hosting environtment
 export ASPNETCORE_ENVIRONMENT=Development
 

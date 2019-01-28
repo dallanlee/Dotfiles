@@ -109,6 +109,7 @@ alias dbdir="cd ~/Dropbox"
 alias dldir="cd ~/Downloads"
 alias dtdir="cd ~/Desktop"
 alias g="git"
+
 # PrinterLogic Shortcuts
 alias plcomdir="cd ~/pl/printerlogic-com"
 alias plhdir="cd ~/pl/hermes"
@@ -261,6 +262,9 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# Composer Valet PATH
+export PATH="~/.composer/vendor/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
