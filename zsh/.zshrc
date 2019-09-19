@@ -1,3 +1,7 @@
+# Setup for virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -276,3 +280,12 @@ export NVM_DIR="$HOME/.nvm"
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/dallan.clawson/PrinterLogic/pl-email/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/dallan.clawson/PrinterLogic/pl-email/node_modules/tabtab/.completions/sls.zsh
+
+# MPV + Streamlink for Twitch videos
+function twitch {
+  if [ -z "$1" ]; then
+    echo "Usage: twitch {channel name}"
+  else
+    streamlink -p "mpv --cache=10000" https://twitch.tv/$1 best &!
+  fi
+}
