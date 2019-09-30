@@ -289,3 +289,6 @@ function twitch {
     streamlink -p "mpv --cache=10000" https://twitch.tv/$1 best &!
   fi
 }
+
+export PATH="/usr/local/opt/php@7.3/bin:$PATH"
+export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
