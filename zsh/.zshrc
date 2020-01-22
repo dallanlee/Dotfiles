@@ -63,7 +63,8 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+  git,
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -268,7 +269,10 @@ alias path='echo -e ${PATH//:/\\n}'
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Composer Valet PATH
-export PATH="~/.composer/vendor/bin:$PATH"
+# export PATH="~/.composer/vendor/bin:$PATH"
+
+# Composer PATH
+export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
