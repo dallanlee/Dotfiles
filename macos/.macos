@@ -31,8 +31,8 @@ defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Set keyboard repeat/delete rate
-defaults write -g KeyRepeat -int 2
-defaults write -g InitialKeyRepeat -int 12
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
