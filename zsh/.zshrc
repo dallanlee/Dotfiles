@@ -282,6 +282,13 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 # Composer PATH
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
+# fnm PATH
+export PATH=/Users/dallan/.fnm/current/bin:$PATH
+export FNM_MULTISHELL_PATH=/Users/dallan/.fnm/current
+export FNM_DIR=/Users/dallan/.fnm
+export FNM_NODE_DIST_MIRROR=https://nodejs.org/dist
+export FNM_LOGLEVEL=info
+
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [[ -f /Users/dallan.clawson/PrinterLogic/pl-email/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/dallan.clawson/PrinterLogic/pl-email/node_modules/tabtab/.completions/serverless.zsh
@@ -303,3 +310,4 @@ export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="/usr/local/sbin:$PATH"
