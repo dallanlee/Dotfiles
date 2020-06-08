@@ -123,16 +123,13 @@ alias dldir="cd ~/Downloads"
 alias dtdir="cd ~/Desktop"
 alias g="git"
 
-# PrinterLogic Shortcuts
-alias plcomdir="cd ~/pl/printerlogic-com"
-alias plhdir="cd ~/pl/hermes"
-alias pladir="cd ~/pl/pl-auth"
-alias plbdir="cd ~/pl/pl-billing"
-alias pledir="cd ~/pl/pl-email"
-alias plpdir="cd ~/pl/pl-product"
-alias plrsdir="cd ~/pl/pl-roi-server"
-alias plsdir="cd ~/pl/pl-salesforce"
-alias plrdir="cd ~/pl/roi"
+# iCloud Drive
+alias icd="cd /Users/dallan/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias iclouddrive="cd /Users/dallan/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias iclouddir="cd /Users/dallan/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias cdicloud="cd /Users/dallan/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias cdicd="cd /Users/dallan/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias icddir="cd /Users/dallan/Library/Mobile\ Documents/com~apple~CloudDocs"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
