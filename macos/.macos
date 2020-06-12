@@ -51,7 +51,16 @@ defaults write com.apple.screencapture disable-shadow -bool true
 defaults write com.apple.finder QuitMenuItem -bool true
 
 # Set Home directory as the default location for new Finder windows
-defaults write com.apple.finder NewWindowTarget -string "PfLo"
+# New window target
+# KEY
+# Computer     : `PfCm`
+# Volume       : `PfVo`
+# $HOME        : `PfHm`
+# Desktop      : `PfDe`
+# Documents    : `PfDo`
+# All My Files : `PfAF`
+# Other…       : `PfLo`
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
 # Show/hide icons for hard drives, servers, and removable media on the desktop
@@ -94,6 +103,9 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
+
+# Show user `Library` folder
+chflags nohidden "${HOME}/Library"
 
 # Expand the following File Info panes:
 # “General”, “Open with”, and “Sharing & Permissions”
