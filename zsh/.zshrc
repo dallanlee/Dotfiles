@@ -108,9 +108,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Easier navigation: .., ..., ...., ....., ~ and -
 
-# alias hub to git
-eval "$(hub alias -s)"
-
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
