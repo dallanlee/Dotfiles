@@ -6,11 +6,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Setup for virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=$HOME/.virtualenvs
+# source /usr/local/bin/virtualenvwrapper.sh
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Enable flag to ignore warning about "Insecure completion-dependent directories detected"
+ZSH_DISABLE_COMPFIX=true
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -122,12 +125,12 @@ alias dtdir="cd ~/Desktop"
 alias g="git"
 
 # iCloud Drive
-alias icd="cd /Users/dallan/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias iclouddrive="cd /Users/dallan/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias iclouddir="cd /Users/dallan/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias cdicloud="cd /Users/dallan/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias cdicd="cd /Users/dallan/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias icddir="cd /Users/dallan/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias icd="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias iclouddrive="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias iclouddir="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias cdicloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias cdicd="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias icddir="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -278,18 +281,11 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # fnm PATH
-export PATH=/Users/dallan/.fnm/current/bin:$PATH
-export FNM_MULTISHELL_PATH=/Users/dallan/.fnm/current
-export FNM_DIR=/Users/dallan/.fnm
+export PATH=$HOME/.fnm/current/bin:$PATH
+export FNM_MULTISHELL_PATH=$HOME/.fnm/current
+export FNM_DIR=$HOME/.fnm
 export FNM_NODE_DIST_MIRROR=https://nodejs.org/dist
 export FNM_LOGLEVEL=info
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/dallan.clawson/PrinterLogic/pl-email/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/dallan.clawson/PrinterLogic/pl-email/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/dallan.clawson/PrinterLogic/pl-email/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/dallan.clawson/PrinterLogic/pl-email/node_modules/tabtab/.completions/sls.zsh
 
 # MPV + Streamlink for Twitch videos
 function twitch {
@@ -306,3 +302,6 @@ export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH="/usr/local/sbin:$PATH"
+
+# Enable zsh-autosuggestions plugin
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
