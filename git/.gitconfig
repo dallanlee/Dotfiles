@@ -285,6 +285,9 @@ cmd = code --wait --new-window --diff $LOCAL $REMOTE
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
 
+[submodule]
+	recurse = true
+
 # URL shorthands
 
 [url "git@github.com:"]
