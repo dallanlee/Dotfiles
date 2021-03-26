@@ -18,6 +18,9 @@
 [help]
 	autocorrect = 1
 
+[pull]
+	rebase = false
+
 [column]
 	ui = auto
 
