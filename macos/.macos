@@ -19,19 +19,25 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # System: Set computer name
 # sudo scutil --set ComputerName "Dallan's MacBook"
+# sudo scutil --set ComputerName "Dallan's MacBook Air"
 # sudo scutil --set ComputerName "Dallan's MacBook Pro"
 # sudo scutil --set ComputerName "Dallan's iMac"
+# sudo scutil --set ComputerName "Dallan's iMac Pro"
 # sudo scutil --set ComputerName "Dallan's Mac Pro"
 # sudo scutil --set ComputerName "Dallan's Mac Mini"
 sudo scutil --set HostName "dallan"
 # sudo scutil --set LocalHostName "Dallans-MacBook"
+# sudo scutil --set LocalHostName "Dallans-MacBook-Air"
 # sudo scutil --set LocalHostName "Dallans-MacBook-Pro"
 # sudo scutil --set LocalHostName "Dallans-iMac"
+# sudo scutil --set LocalHostName "Dallans-iMac-Pro"
 # sudo scutil --set LocalHostName "Dallans-Mac-Pro"
 # sudo scutil --set LocalHostName "Dallans-Mac-Mini"
 # sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Dallans-MacBook"
 # sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Dallans-MacBook-Pro"
+# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Dallans-MacBook-Air"
 # sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Dallans-iMac"
+# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Dallans-iMac-Pro"
 # sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Dallans-Mac-Pro"
 # sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Dallans-Mac-Mini"
 
@@ -305,16 +311,16 @@ defaults write com.apple.iCal WarnBeforeSendingInvitations -bool true
 ########################################
 
 # Contacts: Enable the debug menu in Address Book
-#defaults write com.apple.AddressBook ABShowDebugMenu -bool true
+#defaults write com.apple.Contacts ABShowDebugMenu -bool true
 
 # Contacts: First name/last name display order
 # OPTIONS KEY:
 # false : Before last name
 # true  : Following last name
-defaults write com.apple.AddressBook ABNameDisplay -bool false
+defaults write com.apple.Contacts ABNameDisplay -bool false
 
 # Contacts: Sort by
-defaults write com.apple.AddressBook ABNameSortingFormat -string "sortingFirstName sortingLastName"
+defaults write com.apple.Contacts ABNameSortingFormat -string "sortingFirstName sortingLastName"
 
 # Contacts: Short name format
 # OPTIONS KEY:
@@ -323,28 +329,28 @@ defaults write com.apple.AddressBook ABNameSortingFormat -string "sortingFirstNa
 # 2: First Initial & Last Name
 # 3: First Name Only
 # 4: Last Name Only
-defaults write com.apple.AddressBook ABShortNameStyle -int 2
+defaults write com.apple.Contacts ABShortNameStyle -int 2
 
 # Contacts: Prefer nicknames
-defaults write com.apple.AddressBook ABShortNamePrefersNickname -bool true
+defaults write com.apple.Contacts ABShortNamePrefersNickname -bool true
 
 # Contacts: Address format
-defaults write com.apple.AddressBook ABDefaultAddressCountryCode -string "us"
+defaults write com.apple.Contacts ABDefaultAddressCountryCode -string "us"
 
 # Contacts: vCard Format
 # OPTIONS KEY:
 # false : 3.0
 # true  : 2.1
-defaults write com.apple.AddressBook ABUse21vCardFormat -bool false
+defaults write com.apple.Contacts ABUse21vCardFormat -bool false
 
 # Contacts: Enable private me card
-defaults write com.apple.AddressBook ABPrivateVCardFieldsEnabled -bool false
+defaults write com.apple.Contacts ABPrivateVCardFieldsEnabled -bool false
 
 # Contacts: Export notes in vCards
-defaults write com.apple.AddressBook ABIncludeNotesInVCard -bool false
+defaults write com.apple.Contacts ABIncludeNotesInVCard -bool false
 
 # Contacts: Export photos in vCards
-defaults write com.apple.AddressBook ABIncludePhotosInVCard -bool false
+defaults write com.apple.Contacts ABIncludePhotosInVCard -bool false
 
 
 # Contacts (Global): First name/last name display order
@@ -390,14 +396,14 @@ defaults write com.apple.dock showhidden -bool true
 # 1 : Repertoire
 # 2 : Sample
 # 3 : Font Info
-defaults write com.apple.FontBook FBPreviewTypeKey -int 1
-defaults write com.apple.FontBook FBPreviewModeKey -int 1
+defaults write com.apple.FontBook FBPreviewTypeKey -int 2
+defaults write com.apple.FontBook FBPreviewModeKey -int 2
 
 # FontBook: Resolve duplicates by moving files to the trash
 defaults write com.apple.FontBook FBResolveByMovingToTrashKey -bool true
 
 # FontBook: Default sample font size
-defaults write com.apple.FontBook FBSampleSize -int 18
+defaults write com.apple.FontBook FBSampleSize -int 42
 
 # FontBook: Default Install Location
 # OPTIONS KEY:
@@ -445,28 +451,36 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen -bool true
 
 ########################################
-# SAFARI
+# SAFARI & SAFARI TECHNOLOGY PREVIEW
 ########################################
 
 # Safari: Show the full URL in the address bar (note: this still hides the scheme)
 defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
+defaults write com.apple.SafariTechnologyPreview ShowFullURLInSmartSearchField -bool true
 
 # Safari: Prevent Safari from opening ‘safe’ files automatically after downloading
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
+defaults write com.apple.SafariTechnologyPreview AutoOpenSafeDownloads -bool false
 
 # Safari: Enable Safari’s debug menu
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+defaults write com.apple.SafariTechnologyPreview IncludeInternalDebugMenu -bool true
 
 # Safari: Enable the Develop menu and the Web Inspector in Safari
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.SafariTechnologyPreview IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.SafariTechnologyPreview WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+defaults write com.apple.SafariTechnologyPreview com.apple.SafariTechnologyPreview.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
 # Safari: Add a context menu item for showing the Web Inspector in web views
 defaults write -g WebKitDeveloperExtras -bool true
 
 # Safari: Enable continuous spellchecking
 defaults write com.apple.Safari WebContinuousSpellCheckingEnabled -bool true
+defaults write com.apple.SafariTechnologyPreview WebContinuousSpellCheckingEnabled -bool true
 
 # Safari: Update extensions automatically
 defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
+defaults write com.apple.SafariTechnologyPreview InstallExtensionUpdatesAutomatically -bool true
