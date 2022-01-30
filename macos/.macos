@@ -18,28 +18,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ########################################
 
 # System: Set computer name
-# sudo scutil --set ComputerName "Dallan's MacBook"
-# sudo scutil --set ComputerName "Dallan's MacBook Air"
-# sudo scutil --set ComputerName "Dallan's MacBook Pro"
-# sudo scutil --set ComputerName "Dallan's iMac"
-# sudo scutil --set ComputerName "Dallan's iMac Pro"
-# sudo scutil --set ComputerName "Dallan's Mac Pro"
-# sudo scutil --set ComputerName "Dallan's Mac Mini"
 sudo scutil --set HostName "dallan"
-# sudo scutil --set LocalHostName "Dallans-MacBook"
-# sudo scutil --set LocalHostName "Dallans-MacBook-Air"
-# sudo scutil --set LocalHostName "Dallans-MacBook-Pro"
-# sudo scutil --set LocalHostName "Dallans-iMac"
-# sudo scutil --set LocalHostName "Dallans-iMac-Pro"
-# sudo scutil --set LocalHostName "Dallans-Mac-Pro"
-# sudo scutil --set LocalHostName "Dallans-Mac-Mini"
-# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Dallans-MacBook"
-# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Dallans-MacBook-Pro"
-# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Dallans-MacBook-Air"
-# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Dallans-iMac"
-# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Dallans-iMac-Pro"
-# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Dallans-Mac-Pro"
-# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Dallans-Mac-Mini"
 
 # System: Expand save panel by default
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
