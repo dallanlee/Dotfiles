@@ -18,6 +18,14 @@ ZSH_DISABLE_COMPFIX=true
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# enable some zsh completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -130,6 +138,21 @@ alias iclouddir="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias cdicloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias cdicd="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias icddir="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
+
+# Life OS — open vault and launch Claude Code
+vault() {
+  cd ~/vault && claude
+}
+
+# myPKA — open vault and launch Claude Code
+mypka() {
+  cd ~/mypka && claude
+}
+
+# myPKA Cockpit — launch the local dashboard in the current terminal
+cockpit() {
+  bash ~/mypka/Expansions/mypka-cockpit/start-cockpit.command
+}
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -310,3 +333,14 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Enable zsh-autosuggestions plugin
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+export PATH="$HOME/.local/bin:$PATH"
+
+# Share image with Claude Code by path — copies a ready-to-paste prompt to clipboard
+img() {
+  local path="${1:?Usage: img /path/to/image.png}"
+  echo "Read and analyze this image: $path" | pbcopy
+  echo "Copied to clipboard — paste into Claude Code."
+}
+
+# Preview image inline in terminal (requires: brew install viu)
+alias preview="viu"
