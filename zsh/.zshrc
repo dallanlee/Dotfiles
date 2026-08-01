@@ -144,9 +144,38 @@ vault() {
   cd ~/vault && claude
 }
 
-# myPKA — open vault and launch Claude Code
+# myPKA — one command for a fresh session: vault cwd, herd up, Claude running inside it
 mypka() {
-  cd ~/mypka && claude
+  local vault
+  vault="$(cd -P -- "$HOME/mypka" 2>/dev/null && pwd)" || {
+    print -u2 "mypka: vault not found at ~/mypka"
+    return 1
+  }
+  cd "$vault" || return 1
+
+  # Already inside a Herdr pane — the herd is live, so just start Claude here.
+  if [[ $HERDR_ENV == 1 ]]; then
+    claude
+    return
+  fi
+
+  # Bring the Herdr server up before asking it for a tab.
+  if ! herdr status server 2>/dev/null | grep -q '^status: running'; then
+    herdr server >/dev/null 2>&1 &
+    local i
+    for i in {1..50}; do
+      herdr status server 2>/dev/null | grep -q '^status: running' && break
+      sleep 0.1
+    done
+  fi
+
+  # One tab per agent: new tab rooted in the vault, Claude running in its root pane.
+  local created pane
+  created="$(herdr tab create --cwd "$vault" --label myPKA --focus 2>/dev/null)"
+  pane="$(printf '%s' "$created" | sed -n 's/.*"root_pane":{[^}]*"pane_id":"\([^"]*\)".*/\1/p')"
+  [[ -n $pane ]] && herdr pane run "$pane" claude >/dev/null 2>&1
+
+  herdr
 }
 
 # myPKA Cockpit — launch the local dashboard in the current terminal
